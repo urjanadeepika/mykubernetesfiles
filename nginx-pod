@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    type: harsha
+    author: deepika
+spec: 
+  containers:
+    - name: webserver
+      image: nginx
+

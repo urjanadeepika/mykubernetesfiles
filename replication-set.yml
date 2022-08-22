@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: tomcat-rs
+  labels:
+    type: webserver
+    author: santhoshi
+spec:
+  replicas: 2
+  selector:
+    labels:
+      type: webserver
+  template:
+    metadata:
+      name: tomcat-pod
+      labels: 
+        type: webserver
+        author: santhoshi
+  spec: 
+    containers:
+      - name: mytomcat
+        image: tomee
+        ports:
+          - containerPort: 8080
+            hpstPort: 9090
+
